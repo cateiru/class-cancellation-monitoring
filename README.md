@@ -24,7 +24,7 @@ Python: 3.6.9
 pipenv shell
 
 >>> exit
-````
+```
 
 ## コードの静的解析
 
