@@ -18,7 +18,7 @@ OS: MacOS Catalina 10.15.2~
 Python: 3.6.9  
 
 仮想環境: Pipenv  
-実行例:
+実行例:
 
 ```sh
 pipenv shell
