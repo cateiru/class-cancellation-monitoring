@@ -1,0 +1,17 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+flake8 = "*"
+pylint = "*"
+mypy = "*"
+
+[scripts]
+start = "sh analysis.sh"
+
+[packages]
+
+[requires]
+python_version = "3.6"
