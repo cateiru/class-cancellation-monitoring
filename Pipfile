@@ -7,11 +7,15 @@ verify_ssl = true
 flake8 = "*"
 pylint = "*"
 mypy = "*"
+autopep8 = "*"
 
 [scripts]
 start = "sh analysis.sh"
 
 [packages]
+selenium = "*"
+chromedriver-binary = "==79.0.3945.36.0"
+click = "*"
 
 [requires]
 python_version = "3.6"
