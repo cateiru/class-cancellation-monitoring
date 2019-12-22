@@ -16,6 +16,8 @@ start = "sh analysis.sh"
 selenium = "*"
 chromedriver-binary = "==79.0.3945.36.0"
 click = "*"
+schedule = "*"
+slackweb = "*"
 
 [requires]
 python_version = "3.6"

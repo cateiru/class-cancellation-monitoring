@@ -20,17 +20,33 @@
 
 ## 開発環境
 
-OS: MacOS Catalina 10.15.2~  
+OS: MacOS Catalina  
 Python: 3.6.9  
+GoogleChrome: v79
 
 仮想環境: Pipenv  
-実行例:
+仮想環境の実行例:
 
 ```sh
 pipenv shell
 
 >>> exit
 ```
+
+## 動かす
+
+事前準備しておくもの
+
+* GoogleChrome(version:79)
+* SlackのIncoming Webhook API
+* 学籍番号とパスワード
+
+```sh
+python main.py
+```
+
+わからないところがあればTwitterのDMへ  
+![twitter](https://img.shields.io/twitter/follow/cateiru?style=social)
 
 ## コードの静的解析
 
@@ -49,4 +65,4 @@ pipenv run start
 
 ## 更新履歴
 
-ﾏﾀﾞﾂｸｯﾃﾅｲ…
+1.0.0: リリース

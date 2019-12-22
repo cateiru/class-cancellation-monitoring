@@ -7,7 +7,7 @@ from selenium import webdriver, common
 
 class ConnectWeb():
     '''
-    Obtain information on classes canceled from UNIPA.
+    Obtain information on canceled and supplementary classes from UNIPA.
     '''
 
     def __init__(self, user_id: str, password: str) -> None:
@@ -29,11 +29,11 @@ class ConnectWeb():
 
     def get(self) -> str:
         '''
-        Get the information of the cancellation from UNIPA.
+        Get the information of the cancellation and supplementary from UNIPA.
 
         Returns:
             str: A character string containing the information on
-                 the acquired class cancellation.
+                 the acquired class cancellation and supplementary.
         '''
         browser = self.browser
 
@@ -56,7 +56,7 @@ class ConnectWeb():
         print('Success. Acquisition completed.')
         return canceled_class_information
 
-    def quite(self) -> None:
+    def quit(self) -> None:
         '''
         Terminate the connection.
         '''
