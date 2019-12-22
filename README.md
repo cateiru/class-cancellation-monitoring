@@ -12,7 +12,7 @@
 
 ## 説明
 
-大学の`UNIVERSAL PASSPORT`、通称UNIPAをAM6:00~PM21:00の間1時間ごとに情報を取得し、新しい休講情報が投稿された場合Twitterのアカウントにツイートします。
+大学の`UNIVERSAL PASSPORT`、通称UNIPAをAM6:00~PM21:00の間1時間ごとに情報を取得し、新しい休講情報が投稿された場合~~Twitterのアカウントにツイート~~Slackのbotに送信します。
 
 ## 注意
 
@@ -34,6 +34,12 @@ pipenv shell
 ```
 
 ## 動かす
+
+動作環境
+
+* Mac
+* Linux(動作未確認)
+* Windows(動作未確認)
 
 事前準備しておくもの
 
