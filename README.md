@@ -57,7 +57,7 @@ pip install pipenv
 pipenv install
 
 # 実行
-pipenv start
+pipenv run start
 
 # 停止は[⌘+C]or[CONTROL+C]
 # 仮想環境の停止はexitと入力するか[⌘+D]
