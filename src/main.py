@@ -34,14 +34,11 @@ def check_class(directory: str, slack_webhook: str, user_id: str, password: str)
     if get_log == '':
         return
 
-    print('='*30)
-    print(get_log)
-    print('='*30)
-
     get_log_list = get_log.split('\n')
     for log_line in get_log_list:
-        find_chanceled_class = re.search(
-            r'【千住・(?P<data>.+)】(?P<text>.+)\[.+$', log_line)
+        find_chanceled_class = re.fullmatch(
+            r'【千住・(?P<data>(休講|補講))】(?P<text>.+)\[.+$', log_line) \
+            or re.fullmatch(r'【鳩山】(?P<text>.+)(?P<data>(補講|休講))$', log_line)
         if find_chanceled_class:
             elements[find_chanceled_class.group(
                 'text')] = find_chanceled_class.group('data')
@@ -95,13 +92,14 @@ def notice_slack(slack_webhook: str, log: Dict[str, str]) -> None:
         log (Dict[str, str]): Cancellation and supplementary information to be sent.
     '''
     slack = slackweb.Slack(url=slack_webhook)
+    print('='*30)
     for data in log:
-        print(f'Submit Slack: {data}')
+        print(f'Submit to Slack: {data}')
         slack.notify(text=f'【{log[data]}】{data}')
 
 
 @click.command()
-@click.option('--directory', prompt=True, type=click.Path(exists=True), help='Directory for saving log.json.')
+@click.option('--directory', prompt=True, type=click.Path(), help='Directory for saving log.json.')
 @click.option('--slack_webhook', prompt=True, help='Incoming Webhook URL.')
 @click.option('--user_id', prompt=True, help='Student number.')
 @click.option('--password', prompt=True, hide_input=True, help='Password.')
@@ -130,7 +128,7 @@ def main(directory: str, slack_webhook: str, user_id: str, password: str) -> Non
 
     while True:
         schedule.run_pending()
-        time.sleep(10)
+        time.sleep(1)
 
 
 if __name__ == "__main__":

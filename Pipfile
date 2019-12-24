@@ -10,7 +10,8 @@ mypy = "*"
 autopep8 = "*"
 
 [scripts]
-start = "sh analysis.sh"
+start = "python src/main.py"
+
 
 [packages]
 selenium = "*"
