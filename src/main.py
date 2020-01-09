@@ -14,7 +14,7 @@ import slackweb
 from connect import ConnectWeb
 
 
-def check_class(directory: str, slack_webhook: str, user_id: str, password: str) -> None:
+def check_class(directory: str, slack_webhook: str, url: str, user_id: str, password: str) -> None:
     '''
     Scraping the element obtained from UNIPA, extract necessary information,
     add log to json and send to slack bot.
@@ -27,7 +27,7 @@ def check_class(directory: str, slack_webhook: str, user_id: str, password: str)
     '''
     elements = {}
 
-    unipa = ConnectWeb(user_id, password)
+    unipa = ConnectWeb(url, user_id, password)
     get_log = unipa.get()
     unipa.quit()
 
@@ -101,9 +101,10 @@ def notice_slack(slack_webhook: str, log: Dict[str, str]) -> None:
 @click.command()
 @click.option('--directory', prompt=True, type=click.Path(), help='Directory for saving log.json.')
 @click.option('--slack_webhook', prompt=True, help='Incoming Webhook URL.')
+@click.option('--unipa-url', 'url', prompt=True, help='UNIPA URL', default='https://portal.sa.dendai.ac.jp/uprx/')
 @click.option('--user_id', prompt=True, help='Student number.')
 @click.option('--password', prompt=True, hide_input=True, help='Password.')
-def main(directory: str, slack_webhook: str, user_id: str, password: str) -> None:
+def main(directory: str, slack_webhook: str, url: str, user_id: str, password: str) -> None:
     '''
     Runs only for the specified time.
 
@@ -113,18 +114,24 @@ def main(directory: str, slack_webhook: str, user_id: str, password: str) -> Non
         user_id (str): Student ID number to log in to UNIPA.
         password (str): Password to log in to UNIPA.
     '''
+    if not os.path.isdir(directory):
+        if click.confirm('Directory not found. Create new directory?', default=True):
+            os.makedirs(directory)
+        else:
+            raise FileNotFoundError('directory is not found.')
+
     for hour in range(6, 22):
         if hour < 10:
             hour_time = f'0{hour}:00'
         else:
             hour_time = f'{hour}:00'
         schedule.every().day.at(hour_time).do(
-            check_class, directory=directory, slack_webhook=slack_webhook, user_id=user_id, password=password)
+            check_class, directory=directory, slack_webhook=slack_webhook, url=url, user_id=user_id, password=password)
         print(hour_time, end=' | ')
     print('\n'+'-'*30)
     print('Run start.')
 
-    check_class(directory, slack_webhook, user_id, password)
+    check_class(directory, slack_webhook, url, user_id, password)
 
     while True:
         schedule.run_pending()

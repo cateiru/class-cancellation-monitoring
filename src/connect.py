@@ -10,7 +10,7 @@ class ConnectWeb():
     Obtain information on canceled and supplementary classes from UNIPA.
     '''
 
-    def __init__(self, user_id: str, password: str) -> None:
+    def __init__(self, url: str, user_id: str, password: str) -> None:
         '''
         Class initialization.
 
@@ -20,7 +20,7 @@ class ConnectWeb():
         '''
         self.user_id = user_id
         self.password = password
-        self.url = 'https://portal.sa.dendai.ac.jp/uprx/'
+        self.url = url
 
         options = webdriver.ChromeOptions()
         options.add_argument('--headless')
@@ -52,7 +52,7 @@ class ConnectWeb():
         login_button.click()
 
         canceled_class_information = browser.find_element_by_id(
-            'funcForm:tabArea:0:j_idt230:1:j_idt231').text
+            'funcForm:tabArea:0:j_idt232:1:j_idt233').text
         print('Success. Acquisition completed.')
         return canceled_class_information
 
