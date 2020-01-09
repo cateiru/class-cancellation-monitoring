@@ -109,3 +109,10 @@ pipenv install chromedriver-binary=={バージョン}
 * 鳩山キャンパスの休講・補講情報の取得に対応。
 * 誤字の修正。
 * READMEの説明の追加。
+
+
+### 1.0.2
+
+* [issues](https://github.com/yuto51942/class-cancellation-monitoring/issues/2#issue-542261473)を解消
+  * 指定先にディレクトリがない場合はユーザーに新しく作るかを問います
+* unipaの休講・補講情報のidの値が変わっていたため変更
