@@ -40,7 +40,8 @@ pipenv shell
 
 * Mac
 * Linux(動作未確認)
-* Windows(動作未確認)
+* Windows
+* Python 3.6.x
 
 事前準備しておくもの
 
@@ -55,11 +56,8 @@ pip install pipenv
 # Pipenvを使用し依存関係のインストール
 pipenv install
 
-# (任意: これをする場合は１つ上の項目はしなくて良い)Pipenvの仮想化
-pipenv shell
-
 # 実行
-pipenv start
+pipenv run start
 
 # 停止は[⌘+C]or[CONTROL+C]
 # 仮想環境の停止はexitと入力するか[⌘+D]
