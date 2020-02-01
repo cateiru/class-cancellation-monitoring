@@ -6,13 +6,11 @@
 ![fllowme](https://img.shields.io/github/followers/yuto51942?label=FollowMe&style=social)
 ![twitter](https://img.shields.io/twitter/follow/cateiru?style=social)
 
-## language
-
-[English](doc/README_en.md)
+language: [🇯🇵](README.md)   [🇺🇸](doc/README_en.md)
 
 ## 説明
 
-大学の`UNIVERSAL PASSPORT`、通称UNIPAからAM6:00~PM21:00の間1時間ごとに情報を取得し、新しい休講・補講情報が投稿された場合~~Twitterのアカウントにツイート~~Slackのbotに送信します。
+大学の掲示板である`UNIVERSAL PASSPORT`(UNIPA)からAM6:00~PM21:00の間1時間ごとに休講・補講情報を取得し、新しい休講・補講情報が投稿された場合~~Twitterのアカウントにツイート~~Slackのbotに送信します。
 
 ## 注意
 
@@ -109,7 +107,6 @@ pipenv install chromedriver-binary=={バージョン}
 * 鳩山キャンパスの休講・補講情報の取得に対応。
 * 誤字の修正。
 * READMEの説明の追加。
-
 
 ### 1.0.2
 
