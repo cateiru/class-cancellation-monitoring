@@ -121,10 +121,7 @@ def main(directory: str, slack_webhook: str, url: str, user_id: str, password: s
             raise FileNotFoundError('directory is not found.')
 
     for hour in range(6, 22):
-        if hour < 10:
-            hour_time = f'0{hour}:00'
-        else:
-            hour_time = f'{hour}:00'
+        hour_time = '{:02d}:00'.format(hour)
         schedule.every().day.at(hour_time).do(
             check_class, directory=directory, slack_webhook=slack_webhook, url=url, user_id=user_id, password=password)
         print(hour_time, end=' | ')
