@@ -113,3 +113,8 @@ release
 * Resolve [issues](https://github.com/yuto51942/class-cancellation-monitoring/issues/2#issue-542261473).
   * If there is no directory at the specified destination, ask the user whether to create a new one
 * Changed because the value of id of the cancellation / supplementary information of unipa has changed
+
+### 1.0.3
+
+* Using `'{: 02d}: 00'.format ()` to simplify the program.
+* I wrote an English version of README.
