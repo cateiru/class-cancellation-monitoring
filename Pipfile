@@ -12,10 +12,9 @@ autopep8 = "*"
 [scripts]
 start = "python src/main.py"
 
-
 [packages]
 selenium = "*"
-chromedriver-binary = "==79.0.3945.36.0"
+chromedriver-binary = "==80.0.3987.16.0"
 click = "*"
 schedule = "*"
 slackweb = "*"
