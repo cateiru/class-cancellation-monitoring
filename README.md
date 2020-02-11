@@ -84,7 +84,7 @@ pythonのライブラリである`slackweb`を使用しております。
 pythonライブラリである`selenium`, `chromedriver-binary`を使用しております。
 
 `chromedriver-binary`を使用する際にそのバージョンに適切なGoogleChromeが必要です。
-現在、Chrome79に対応されております。他のバージョンで実行したい場合は、
+現在、Chrome80に対応されております。他のバージョンで実行したい場合は、
 
 ```sh
 pipenv install chromedriver-binary=={バージョン}
@@ -118,3 +118,7 @@ pipenv install chromedriver-binary=={バージョン}
 
 * `'{:02d}:00'.format()`を使用し、プログラムを簡単にした。
 * 英語版のREADMEを書いた。
+
+## 1.0.4
+
+* GoogleChrome v80 に対応。
