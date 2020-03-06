@@ -27,6 +27,12 @@ class ConnectWeb():
         self.browser = webdriver.Chrome(options=options)
         self.browser.set_page_load_timeout(20)
 
+    def __enter__(self):
+        '''
+        enter
+        '''
+        return self
+
     def get(self) -> str:
         '''
         Get the information of the cancellation and supplementary from UNIPA.
@@ -56,7 +62,7 @@ class ConnectWeb():
         print('Success. Acquisition completed.')
         return canceled_class_information
 
-    def quit(self) -> None:
+    def __exit__(self, url: str, user_id: str, password: str) -> None:
         '''
         Terminate the connection.
         '''

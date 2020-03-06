@@ -119,6 +119,10 @@ release
 * Using `'{: 02d}: 00'.format ()` to simplify the program.
 * I wrote an English version of README.
 
-## 1.0.4
+### 1.0.4
 
 * Compatible with GoogleChrome v80.
+
+### 1.0.5
+
+* Changed `ConnectWeb ()` class to execute by with. This eliminated the action of closing the browser.

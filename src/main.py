@@ -27,9 +27,8 @@ def check_class(directory: str, slack_webhook: str, url: str, user_id: str, pass
     '''
     elements = {}
 
-    unipa = ConnectWeb(url, user_id, password)
-    get_log = unipa.get()
-    unipa.quit()
+    with ConnectWeb(url, user_id, password) as unipa:
+        get_log = unipa.get()
 
     if get_log == '':
         return
