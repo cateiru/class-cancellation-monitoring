@@ -14,10 +14,9 @@ start = "python src/main.py"
 
 [packages]
 selenium = "*"
-chromedriver-binary = "==80.0.3987.16.0"
 click = "*"
 schedule = "*"
 slackweb = "*"
 
 [requires]
-python_version = "3.6"
+python_version = "3.8"
