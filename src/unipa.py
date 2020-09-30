@@ -33,6 +33,12 @@ class ConnectWeb():
         return self
 
     def login(self) -> str:
+        '''
+        login to `UNIPA`.
+
+        Returns:
+            str: system message.
+        '''
         self.browser
 
         try:
@@ -51,17 +57,55 @@ class ConnectWeb():
 
         return 'Success: opened.'
 
-    def get(self) -> str:
+    def get_teach(self) -> str:
         '''
-        Get the information of the cancellation and supplementary from UNIPA.
+        Notice from faculty members
 
         Returns:
-            str: A character string containing the information on
-                 the acquired class cancellation and supplementary.
+            str: Obtained information.
+        '''
+
+        canceled_class_information = self.browser.find_element_by_id(
+            'funcForm:tabArea:0:j_idt232:0:j_idt233').text
+
+        return canceled_class_information
+
+    def get_cancel(self) -> str:
+        '''
+        Cancellation / supplementary class / classroom change
+
+        Returns:
+            str: Obtained information.
         '''
 
         canceled_class_information = self.browser.find_element_by_id(
             'funcForm:tabArea:0:j_idt232:1:j_idt233').text
+
+        return canceled_class_information
+
+    def get_class(self) -> str:
+        '''
+        Notice about class.
+
+        Returns:
+            str: Obtained information.
+        '''
+
+        canceled_class_information = self.browser.find_element_by_id(
+            'funcForm:tabArea:0:j_idt232:2:j_idt233').text
+
+        return canceled_class_information
+
+    def get_life(self) -> str:
+        '''
+        Notice about school life in general.
+
+        Returns:
+            str: Obtained information.
+        '''
+
+        canceled_class_information = self.browser.find_element_by_id(
+            'funcForm:tabArea:0:j_idt232:3:j_idt233').text
 
         return canceled_class_information
 
