@@ -1,7 +1,6 @@
 '''
 Get specific information from the site.
 '''
-import chromedriver_binary  # noqa: F401 # pylint: disable=W0611
 from selenium import common, webdriver
 
 
