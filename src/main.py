@@ -1,5 +1,7 @@
 '''
-Send the information of cancellations and supplementary classes to slack.
+@author: Yuto Watanabe <yuto.w51942@gmail.com>
+
+Copyright (c) 2019-2020 Yuto Watanabe
 '''
 import json
 import os

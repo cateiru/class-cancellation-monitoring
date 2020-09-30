@@ -1,5 +1,7 @@
 '''
-Get specific information from the site.
+@author: Yuto Watanabe <yuto.w51942@gmail.com>
+
+Copyright (c) 2019-2020 Yuto Watanabe
 '''
 from selenium import common, webdriver
 
